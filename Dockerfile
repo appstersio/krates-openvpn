@@ -3,7 +3,7 @@
 # Leaner build then Ubunutu
 FROM debian:jessie
 
-MAINTAINER Kyle Manna <kyle@kylemanna.com>
+MAINTAINER Jussi Nummelin <jussi.nummelin@digia.com>
 
 RUN apt-get update && \
     apt-get install -y openvpn iptables git-core && \
@@ -25,7 +25,7 @@ VOLUME ["/etc/openvpn"]
 EXPOSE 1194/udp
 
 WORKDIR /etc/openvpn
-CMD ["ovpn_run"]
+CMD ["start_vpn.sh"]
 
 ADD ./bin /usr/local/bin
 RUN chmod a+x /usr/local/bin/*
