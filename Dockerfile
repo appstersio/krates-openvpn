@@ -1,7 +1,7 @@
-# Original credit: https://github.com/jpetazzo/dockvpn
+# Original credit: https://github.com/jpetazzo/dockvpn &
+# https://github.com/kylemanna/docker-openvpn
 
-# Leaner build then Ubunutu
-FROM debian:jessie
+FROM ubuntu:trusty
 
 MAINTAINER Jussi Nummelin <jussi.nummelin@digia.com>
 
@@ -21,7 +21,7 @@ ENV EASYRSA_VARS_FILE $OPENVPN/vars
 
 VOLUME ["/etc/openvpn"]
 
-# Internally uses port 1194, remap using docker
+# Internally uses port 443, remap using docker
 EXPOSE 443/tcp
 
 WORKDIR /etc/openvpn
