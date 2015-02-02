@@ -22,7 +22,7 @@ ENV EASYRSA_VARS_FILE $OPENVPN/vars
 VOLUME ["/etc/openvpn"]
 
 # Internally uses port 1194, remap using docker
-EXPOSE 1194/udp
+EXPOSE 443/tcp
 
 WORKDIR /etc/openvpn
 CMD ["start_vpn.sh"]

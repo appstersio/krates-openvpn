@@ -4,7 +4,7 @@
 # Get an OpenVPN client configuration file
 #
 
-set -ex
+#set -ex
 
 source "$OPENVPN/ovpn_env.sh"
 cn=$1
