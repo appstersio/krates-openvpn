@@ -25,6 +25,7 @@ VOLUME ["/etc/openvpn"]
 EXPOSE 443/tcp
 
 WORKDIR /etc/openvpn
+
 CMD ["start_vpn.sh"]
 
 ADD ./bin /usr/local/bin

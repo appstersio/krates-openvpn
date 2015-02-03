@@ -11,18 +11,20 @@ while ! [ -n "$(ip addr show | grep ethwe:)" ]; do
 done
 echo "\nWeave network active, proceeding with VPN startup"
 # Setup NAT for ethwe
-sudo iptables -t nat -A POSTROUTING -o ethwe -j MASQUERADE
+iptables -t nat -A POSTROUTING -o ethwe -j MASQUERADE
+
+cp /usr/local/share/easy-rsa/easyrsa3/openssl-1.0.cnf /etc/openvpn
 
 OVPN_CA_PASSPHRASE=openssl rand -base64 32
 
 # Generate configs
-sudo ovpn_genconfig -u $OVPN_SERVER_URL
+ovpn_genconfig -u $OVPN_SERVER_URL
 
 # Initialize PKI stuff
-sudo ovpn_initpki nopass
+ovpn_initpki nopass
 
 # Create client certs and config
-sudo easyrsa build-client-full QTCS_VPN_CLIENT nopass
+easyrsa build-client-full QTCS_VPN_CLIENT nopass
 
 # Start VPN normally
-sudo ovpn_run
+ovpn_run
