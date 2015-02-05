@@ -9,15 +9,8 @@
 source "$OPENVPN/ovpn_env.sh"
 cn=$1
 
-# Wait 30 secs while the certificates are created
-for i in {0..5}; do
-    if [ -f "$EASYRSA_PKI/private/${cn}.key" ]; then
-        break
-    fi
-    sleep 5
-done
 
-if [! -f "$EASYRSA_PKI/private/${cn}.key" ]; then
+if [ ! -f "$EASYRSA_PKI/private/${cn}.key" ]; then
     echo "$cn not found, giving up!"
     exit 1
 fi
