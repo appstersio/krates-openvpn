@@ -40,10 +40,8 @@ $(cat $EASYRSA_PKI/ta.key)
 key-direction 1
 
 remote $OVPN_CN $OVPN_PORT $OVPN_PROTO
+redirect-gateway def1
 EOF
 
-if [ "$OVPN_DEFROUTE" != "0" ];then
-    echo "redirect-gateway def1"
-fi
 
 [ -n "$OVPN_MTU" ] && echo "tun-mtu $OVPN_MTU"
