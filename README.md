@@ -116,6 +116,14 @@ packets, etc).
   volume for re-use across containers
 * Addition of tls-auth for HMAC security
 
+## Differences from kylemanna/docker-openvpn
+
+* Weave specific configs
+* TCP default as it travels through internet more easily
+* Client route pushing during client config
+* PKI and config creation bundled in the startup logic, no need to spin up multiple containers to get things running
+
+
 ## Tested On
 
 * Docker hosts:

@@ -6,7 +6,7 @@ FROM ubuntu:trusty
 MAINTAINER Jussi Nummelin <jussi.nummelin@digia.com>
 
 RUN apt-get update && \
-    apt-get install -y openvpn iptables git-core && \
+    apt-get install -y openvpn iptables git-core netmask && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Update checkout to use tags when v3.0 is finally released
