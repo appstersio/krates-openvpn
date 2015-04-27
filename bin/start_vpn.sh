@@ -20,5 +20,11 @@ else
     echo "Client certificate already initialized, using old configuration"
 fi
 
+echo ""
+echo "=== CLIENT CONFIG START ==="
+ovpn_getclient KONTENA_VPN_CLIENT
+echo "=== CLIENT CONFIG END ==="
+echo ""
+
 # Start VPN normally
 ovpn_run
