@@ -38,6 +38,7 @@ $(cat $EASYRSA_PKI/ta.key)
 key-direction 1
 
 remote $OVPN_CN $OVPN_PORT $OVPN_PROTO
+redirect-gateway def1
 EOF
 
 
