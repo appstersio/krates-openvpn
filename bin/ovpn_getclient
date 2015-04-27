@@ -13,8 +13,6 @@ if [ ! -f "$EASYRSA_PKI/private/${cn}.key" ]; then
     exit 1
 fi
 
-# Get network and mask from IP defined in CIDR format
-IFS='/' read -r nw mask <<< $(netmask -s $NETWORK)
 
 cat <<EOF
 client
@@ -40,7 +38,6 @@ $(cat $EASYRSA_PKI/ta.key)
 key-direction 1
 
 remote $OVPN_CN $OVPN_PORT $OVPN_PROTO
-route $nw $mask
 EOF
 
 
