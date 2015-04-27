@@ -14,8 +14,8 @@ else
 fi
 
 # Create client certs and config
-if [ ! -f "$EASYRSA_PKI/private/QTCS_VPN_CLIENT.key" ]; then
-    easyrsa build-client-full QTCS_VPN_CLIENT nopass
+if [ ! -f "$EASYRSA_PKI/private/KONTENA_VPN_CLIENT.key" ]; then
+    easyrsa build-client-full KONTENA_VPN_CLIENT nopass
 else
     echo "Client certificate already initialized, using old configuration"
 fi
