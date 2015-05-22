@@ -38,7 +38,9 @@ $(cat $EASYRSA_PKI/ta.key)
 key-direction 1
 
 remote $OVPN_CN $OVPN_PORT $OVPN_PROTO
-redirect-gateway def1
+route 10.81.0.0 255.255.0.0
+dhcp-option DNS 10.81.0.1
+dhcp-option DOMAIN kontena.local
 EOF
 
 
