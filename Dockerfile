@@ -1,9 +1,11 @@
-# Original credit: https://github.com/jpetazzo/dockvpn &
-# https://github.com/kylemanna/docker-openvpn
+# Original credit:
+# https://github.com/jpetazzo/dockvpn &
+# https://github.com/kylemanna/docker-openvpn &
+# https://github.com/jnummelin/docker-openvpn
 
 FROM ubuntu:trusty
 
-MAINTAINER Jussi Nummelin <jussi.nummelin@digia.com>
+MAINTAINER Jari Kolehmainen <jari@kontena.io>
 
 RUN apt-get update && \
     apt-get install -y openvpn iptables git-core netmask && \

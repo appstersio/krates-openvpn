@@ -5,7 +5,7 @@ cp /usr/local/share/easy-rsa/easyrsa3/openssl-1.0.cnf /etc/openvpn
 # Generate configs, can be pretty safely overwritten
 ovpn_genconfig -u $OVPN_SERVER_URL
 
-# Initialize PKI stuff, need to guard these as the EasyRSA 
+# Initialize PKI stuff, need to guard these as the EasyRSA
 # would override the existing config
 if [ ! -f "$EASYRSA_PKI/private/ca.key" ]; then
     ovpn_initpki nopass
@@ -19,12 +19,6 @@ if [ ! -f "$EASYRSA_PKI/private/KONTENA_VPN_CLIENT.key" ]; then
 else
     echo "Client certificate already initialized, using old configuration"
 fi
-
-echo ""
-echo "=== CLIENT CONFIG START ==="
-ovpn_getclient KONTENA_VPN_CLIENT
-echo "=== CLIENT CONFIG END ==="
-echo ""
 
 # Start VPN normally
 ovpn_run
