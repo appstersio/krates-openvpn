@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Setup NAT for ethwe
+iptables -t nat -A POSTROUTING -o ethwe -j MASQUERADE
+
 cp /usr/local/share/easy-rsa/easyrsa3/openssl-1.0.cnf /etc/openvpn
 
 # Generate configs, can be pretty safely overwritten
