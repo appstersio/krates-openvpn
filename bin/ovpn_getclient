@@ -40,7 +40,7 @@ key-direction 1
 
 remote $OVPN_CN $OVPN_PORT $OVPN_PROTO
 route 10.81.0.0 255.255.0.0
-route $DEFAULT_GW_IP 255.255.255.254
+route $DEFAULT_GW_IP 255.255.255.255
 dhcp-option DNS $DEFAULT_GW_IP
 dhcp-option DOMAIN kontena.local
 EOF
