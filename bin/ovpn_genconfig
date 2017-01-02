@@ -155,6 +155,9 @@ keepalive 10 60
 persist-key
 persist-tun
 
+# Updated cipher to mitigate SWEET32
+cipher AES-256-CBC
+
 # Always use UDP
 proto udp
 port 1194
