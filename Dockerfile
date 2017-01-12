@@ -3,9 +3,9 @@
 # https://github.com/kylemanna/docker-openvpn &
 # https://github.com/jnummelin/docker-openvpn
 
-FROM ubuntu:trusty
+FROM ubuntu:xenial
 
-MAINTAINER Jari Kolehmainen <jari@kontena.io>
+MAINTAINER Kontena, Inc. <info@kontena.io>
 
 RUN apt-get update && \
     apt-get install -y openvpn iptables git-core netmask && \
