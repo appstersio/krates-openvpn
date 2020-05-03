@@ -17,4 +17,4 @@ down:
 	@docker-compose down && docker volume rm -f openvpn
 
 login:
-	@docker login -u="$$DOCKER_USERNAME" -p="$$DOCKER_PASSWORD"
+	@docker login -u="krates" -p="$$DOCKER_PASSWORD"
