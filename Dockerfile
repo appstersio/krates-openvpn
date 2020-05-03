@@ -4,8 +4,7 @@
 # https://github.com/jnummelin/docker-openvpn
 
 FROM ubuntu:xenial
-
-MAINTAINER Kontena, Inc. <info@kontena.io>
+LABEL maintainer="Pavel Tsurbeleu <krates@appsters.io>"
 
 RUN apt-get update && \
     apt-get install -y openvpn iptables git-core netmask && \

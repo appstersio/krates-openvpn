@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+gem 'kommando', require: true
+gem 'rspec', require: true
+gem 'pry', require: true
+gem 'pry-doc', require: true
+gem 'pry-byebug', require: true

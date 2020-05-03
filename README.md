@@ -1,4 +1,4 @@
-# OpenVPN for Kontena
+# OpenVPN for Krates
 
 Based on:
  - https://github.com/jpetazzo/dockvpn

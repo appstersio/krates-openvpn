@@ -48,3 +48,5 @@ EOF
 
 
 [ -n "$OVPN_MTU" ] && echo "tun-mtu $OVPN_MTU"
+# This has to be 0 status to indicate success
+exit 0
