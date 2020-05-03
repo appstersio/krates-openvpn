@@ -1,5 +1,5 @@
 
-.PHONY: build run test push down
+.PHONY: build run test push down login
 
 test:
 	@docker-compose run toolbox -c "bundle install && rspec spec/"
