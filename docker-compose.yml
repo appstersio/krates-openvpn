@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  # OpenVPN client
+  toolbox:
+    image: "krates/toolbox:2.6.5-3"
+    privileged: "true"
+    working_dir: "/client/test"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./test:/client/test"
+    depends_on:
+      - "openvpn"
+  # OpenVPN server
+  openvpn:
+    container_name: "krates-ovpn"
+    image: "krates/openvpn:latest"
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    cap_add:
+      - "NET_ADMIN"
+    ports:
+      - "1194:1194/udp"
+    environment:
+      - "OVPN_SERVER_URL=udp://openvpn:1194"
+      - "TRACE=1"
+      - "OVPN_MGT=1"
+    volumes:
+      - "./bin/ovpn_genconfig:/usr/local/bin/ovpn_genconfig"
+      - "./bin/ovpn_getclient:/usr/local/bin/ovpn_getclient"
